@@ -1,6 +1,6 @@
 {
   "name": "@mitmaro/build-scripts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Build scripts for my projects",
   "publishConfig": {
     "access": "public"
