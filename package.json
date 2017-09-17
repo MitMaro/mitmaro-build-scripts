@@ -1,6 +1,6 @@
 {
   "name": "@mitmaro/build-scripts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build scripts for my projects",
   "publishConfig": {
     "access": "public"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MitMaro/mitmaro-build.git"
+    "url": "git+https://github.com/MitMaro/mitmaro-build-scripts.git"
   },
   "keywords": [
     "build",
@@ -24,9 +24,9 @@
   "author": "Tim Oram <me@mitmaro.ca>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MitMaro/mitmaro-build/issues"
+    "url": "https://github.com/MitMaro/mitmaro-build-scripts/issues"
   },
-  "homepage": "https://github.com/MitMaro/mitmaro-build#readme",
+  "homepage": "https://github.com/MitMaro/mitmaro-build-scripts/blob/master/README.md",
   "devDependencies": {
     "npm-package-json-lint": "^2.11.0",
     "npm-package-json-lint-config-default": "^1.1.0"
