@@ -99,13 +99,23 @@ Supported project types:
 
 If the project root cannot be found, nothing will be printed and `false` will be returned.
 
-If an invalid `project-type` is
-provided the script will exit with `EXIT_CODE_INVALID_STATE`.
+If an invalid `project-type` is provided the script will exit with `EXIT_CODE_INVALID_STATE`.
 
 #### Example
 
 ```
 project_root="$(get-project-root node)"
+```
+
+### `load-environment-file <filepath>`
+
+Loads an environment file of key value pairs without over writting existing values. The format of the environment
+variable files follows "[section 3.2.2. Creating variables](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)".
+
+#### Example
+
+```
+load-environment-file .env
 ```
 
 ### `yn <value>`

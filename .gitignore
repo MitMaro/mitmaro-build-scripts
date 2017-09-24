@@ -1,3 +1,4 @@
 build/
 node_modules/
+mitmaro-build-scripts-*.tgz
 yarn.lock
