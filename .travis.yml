@@ -9,19 +9,18 @@ addons:
 branches:
   only:
   - master
-  - /^v\d+\.\d+\.\d+$/
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
 node_js:
 - '6'
-- '8'
-script: npm run test
-before_deploy: ./scripts/build.bash
+script: "./scripts/lint.bash && ./scripts/build.bash"
+before_deploy: "./scripts/build.bash"
 deploy:
   provider: npm
   email: mitmaro@gmail.com
   skip_cleanup: true
   api_key:
-    secure: mGwfUlaIz5kYO7UCV0fPNjkbJuuZ36eHdy7e7rideOB9ogPDlMnZ6hy0KB65Ks/e/LyqSohdf6f5EZop9WLgmo/ZA4yhTbzw6YieU9J358kR1rC4PWbk2dtSEQLEf9xoiy2suDL35CXfnBtlfgca/FD4JzE8LO8tozoog+myvezsF6Cj8m6m20KABGTgRGtU6w2Ocn5LFm8lJmE4NnKXhg0NTSgYDZkzTZOpBdnFXanrygRh8Q4U7l/I7VlYKDnmMAY3fo9C+tLgMw0t5HILW0dpUtvaCD4VdzPvVYqmjD4Ql1zW5A2yKd2IV+L7NAjS6fRkZDeLl96DK8z/pKuV5YieALI1xVbxBGygfmOXA45qsXylxos6pLN0ebq42gXcyAUdp2WWV28KxjhmjLPKUwZdprjhDxfXDsDZN2CIj238fsSCOw7SzjViJ413rOH5ngGZ62tL7YO23bwWSC7hKI15BiNFH2gbAR5xk7oUueMBy23MJtNsFRpqQ8JCQqEcwFP9aAbPTr5fCvaO13/b3behaDKjZnifMylcWJm3LWSthM5XAnt5rdLhfa+sMqONfJQfbtQiEx8KpJFniNpgtZK6qV+L4NO75tipGrFrc2NB+6dwEqrOfeM3juhZxzZUcwHEsnlMEGU3EDcEdDP1uzM00Y2Hs/SNOliqXwQguug=
+    secure: AfCjr1UePPP5uIcHOcNGO5Ynw3/GBPJXzlj2bzA+iXtfAQddp4FcnYCpxSJ5t0ywgLGf7ni5Snv2W22p/U6gAMBvjOYolHXjbSWiHdzGIJqH+pzS6LUzyApwpFwY1CeMzZOrRkl+SXpIo54vINdU9LXb8noGx3pE/GyRum/+hcv3YXq7JXIY/JBX6T+Yw5Fvh2zSTOsiZcVgiYLno1dZa8Y73FEOT/D48ASvbyMAnKmjJ/9Bn3UE5QjnCkjrstzLeh/NIyQr+Wo4cCIM0I+A9GR8ZG0MN4xorPMvpYUAgRBMF5hkrP/7C4WEHqgdMYOWfd8H7Ecn3ydS5XiS7quj4LhIA8bWMWAU2oXH4EOvrnC7Ug0gI8liH5dmM0kcuXBHTPZG+sGNGPp7PTiMOkpWHXXezGv3grxml7gGtSn8EdnG1hfr9oatjOKVo7QGtedRM4KDWyXM6DYuPrnygAgSTd1+a6JMhVxNd2ZWHoJSeiSpcgVQ36Ol+gvZmLgmySVb3P3JmWwYABUivW2/WsQAlVCmD0PD4aSRdT18kWoU95DUYv1WWHw2Cxl9Km6p0WMq1mYaEM5wJW98RE2n3c/cJWGnWGbnVvW3LFK+cvcNIkuzlM06wNmh3J/kq6UQRxvSiPIQHSvTknAg3lFOwLrnC8NJxl02VakB/uXnPLpcVSE=
   on:
     tags: true
-    node: '8'
+    node: '6'
     repo: MitMaro/mitmaro-build-scripts

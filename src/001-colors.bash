@@ -1,6 +1,6 @@
 # shellcheck disable=SC2034
 
-if type tput >& /dev/null && tput colors >& /dev/null; then
+if type tput >& /dev/null && [[ "$(tput colors)" -ge "256" ]]; then
 	COLOR_RESET="$(tput sgr0)"
 	COLOR_BOLD="$(tput bold)"
 	COLOR_DIM="$(tput dim)"

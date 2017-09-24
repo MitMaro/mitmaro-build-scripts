@@ -10,7 +10,7 @@
     "build-scripts.bash": "build/build-scripts.bash"
   },
   "scripts": {
-    "test": "./scripts/lint.bash"
+    "test": "./scripts/lint.bash && ./scripts/build.bash"
   },
   "repository": {
     "type": "git",
