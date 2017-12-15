@@ -1,7 +1,0 @@
-scripts/
-src/
-.npmpackagejsonlintrc
-.nvmrc
-.travis.yml
-package.json
-
