@@ -1,6 +1,6 @@
 {
   "name": "@mitmaro/build-scripts",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Build scripts for my projects",
   "publishConfig": {
     "access": "public"
@@ -9,6 +9,10 @@
   "bin": {
     "build-scripts.bash": "build/build-scripts.bash"
   },
+  "files": [
+    "build/build-scripts.bash",
+    "index.js"
+  ],
   "scripts": {
     "test": "./scripts/lint.bash && ./scripts/build.bash"
   },

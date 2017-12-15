@@ -11,7 +11,7 @@ branches:
   - master
   - "/^v\\d+\\.\\d+\\.\\d+$/"
 node_js:
-- '6'
+- '8'
 script: "./scripts/lint.bash && ./scripts/build.bash"
 before_deploy: "./scripts/build.bash"
 deploy:
@@ -22,5 +22,5 @@ deploy:
     secure: AfCjr1UePPP5uIcHOcNGO5Ynw3/GBPJXzlj2bzA+iXtfAQddp4FcnYCpxSJ5t0ywgLGf7ni5Snv2W22p/U6gAMBvjOYolHXjbSWiHdzGIJqH+pzS6LUzyApwpFwY1CeMzZOrRkl+SXpIo54vINdU9LXb8noGx3pE/GyRum/+hcv3YXq7JXIY/JBX6T+Yw5Fvh2zSTOsiZcVgiYLno1dZa8Y73FEOT/D48ASvbyMAnKmjJ/9Bn3UE5QjnCkjrstzLeh/NIyQr+Wo4cCIM0I+A9GR8ZG0MN4xorPMvpYUAgRBMF5hkrP/7C4WEHqgdMYOWfd8H7Ecn3ydS5XiS7quj4LhIA8bWMWAU2oXH4EOvrnC7Ug0gI8liH5dmM0kcuXBHTPZG+sGNGPp7PTiMOkpWHXXezGv3grxml7gGtSn8EdnG1hfr9oatjOKVo7QGtedRM4KDWyXM6DYuPrnygAgSTd1+a6JMhVxNd2ZWHoJSeiSpcgVQ36Ol+gvZmLgmySVb3P3JmWwYABUivW2/WsQAlVCmD0PD4aSRdT18kWoU95DUYv1WWHw2Cxl9Km6p0WMq1mYaEM5wJW98RE2n3c/cJWGnWGbnVvW3LFK+cvcNIkuzlM06wNmh3J/kq6UQRxvSiPIQHSvTknAg3lFOwLrnC8NJxl02VakB/uXnPLpcVSE=
   on:
     tags: true
-    node: '6'
+    node: '8'
     repo: MitMaro/mitmaro-build-scripts
