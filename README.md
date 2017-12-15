@@ -20,7 +20,7 @@ Install the package using yarn:
 Create a file to source the build-scripts that contains the following, selecting `npm` or `yarn`:
 
     #!/usr/bin/env bash
-    source "$(npm|yarn bin)/build-scripts.bash"
+    source "$(npm|yarn bin)/build-scripts.bash" || exit 1
     
 
 On the top of the script files add the following to source the file created above, replacing `./common.bash` with the
@@ -63,11 +63,57 @@ Prints a message using the `error` function and then exits is a non-zero `exit_c
 #### Example
 
     # Print error message and exits with code 22
-    error "An error occurred" 22
+    fatal "An error occurred" 22
     
     # Usage as an error handler
-    my_command || error "my_command failed"
+    my_command || fatal "my_command failed"
     
+
+### `set-log-level <level>`
+
+Sets the logging level to the provided `level`. A log function will only output when the level is at or above the level
+of the function. The levels go from `debug` -> `info` -> `warn` -> `error` -> `fatal` and defaults to `info`. 
+
+#### Example
+
+    set-log-level "warn"
+
+### `set-log-name <name>`
+
+Sets a logging name for this process that will be printed before every log output. It will automatically surrounded like
+`[<name>]`. By default no logging name will be used.
+
+#### Example
+
+    set-log-name "my-process.1"
+
+### `clear-log-name`
+
+Clears the logging name.
+
+#### Example
+
+    clear-log-name
+
+### `check-command <command>`
+
+Checks if the command provided as `command` exists, if not found the script will exit with `EXIT_CODE_INVALID_STATE`.
+
+#### Example
+
+```
+check-command "node"
+```
+
+### `ensure-directory <directory>`
+
+Checks if the directory at `directory` exists, if not it will be recursively created.
+
+#### Example
+
+```
+ensure-directory "build/coverage/"
+```
 
 ### `include <file-path>`
 
@@ -116,6 +162,29 @@ variable files follows "[section 3.2.2. Creating variables](http://tldp.org/LDP/
 
 ```
 load-environment-file .env
+```
+
+### `process-run <command> <name> <working-directory> [<process-arguments>...]`
+
+Safely starts the provided `command` with a unique provided `name` from the given `working-directory`. Additional
+arguments can be provided as `process-arguments`. The process will be started with a pid file generated allowing it to
+be killed at a later time. The `pid-file` will be created in `working-directory` with a file name of `<name>.pid`.
+
+#### Example
+
+```
+process-run "node" "server-$PORT" "$PWD" "process-file.js" "file.csv"
+```
+
+### `shutdown-process <pid-file>`
+
+Kill the process references in the provided `pid-file` waiting for it to properly exit. The `pid-file` is generally
+created with the `process-run` function.
+
+#### Example
+
+```
+shutdown "build/server-$PORT.pid"
 ```
 
 ### `yn <value>`
